@@ -15859,7 +15859,7 @@ line-height: 1.2;
 margin: 0;
 padding: 0;
 background: linear-gradient(-45deg, #f4f6f8, #e9eff1, #f4f6f8, #e9eff1);
-background-size: 400% 400%;
+background-size: 100% 100%;
 animation: breatheLoop 25s ease infinite;
 transition: background-color 0.3s ease, color 0.3s ease;
 overflow-x: hidden;
@@ -15946,14 +15946,6 @@ padding: 0;
 overflow-x: hidden;
 }
 
-body {
-background: linear-gradient(to bottom right, #f6ecef, #e4edf2, #eef4ea);
-background-attachment: fixed;
-background-size: cover;
-margin: 0;
-padding: 0;
-font-family: 'Helvetica Neue', sans-serif;
-}
 
 
 section, div, p {
@@ -16136,7 +16128,7 @@ text-align: center;
 }
 
 .qodef-m-title,
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, {
 color: #425a3b !important;
 font-weight: 600;
 letter-spacing: 0.5px;
@@ -16316,6 +16308,5 @@ margin-top: 20px;
 font-size: 1.1rem;
 box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
-
 
 
