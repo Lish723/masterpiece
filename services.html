@@ -3,41 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Services & What to Expect – Advanced Counseling Solutions</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="services-style.css" />
+<script src="style.js"></script>
+<style>.toggle-content { display: none; }</style>
 </head>
-<body class="services-page">
-    <nav style="text-align: center; margin: 2rem 0;">
-  <a href="index.html" style="margin: 0 1rem;">Home</a>
-  <a href="clinicians.html" style="margin: 0 1rem;">Meet Our Clinicians</a>
-  <a href="what-to-expect.html" style="margin: 0 1rem;">What to Expect</a>
-</nav>
 <header>
-<h1>Services & What to Expect</h1> 
-
-<div class="hamburger-wrapper">
-    <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Menu">
-<span class="bar"></span>
-<span class="bar"></span>
-<span class="bar"></span>
-    </button>
-
-    <div class="hamburger-menu" id="headerMenu">
-<a href="/about.html">About</a>
-<a href="/meet-our-clinician.html">Meet Our Clinician</a>
-<a href="/faq.html">FAQ</a>
-<a href="/media.html">Media</a>
-<a href="/contact.html">Contact</a>
-<a href="/payment.html">Payment</a>
-    </div>
+<div class="header-top">
+    <h1><span class="leaf-icon">🍃</span>Services & What to Expect</h1>
+    <div class="hamburger-wrapper">
+<button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+</button>
+<div class="hamburger-menu" id="headerMenu">
+        <a href="/about.html">About</a>
+        <a href="/meet-our-clinician.html">Meet Our Clinician</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/media.html">Media</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/payment.html">Payment</a>
 </div>
-
-<p>Your journey matters. Learn how we support you from your first session onward with compassion and clarity.</p>
-
-<div class="section-divider-with-icon">
-    <div class="divider-icon">🌿</div>
-    <div class="section-line"></div>
 </div>
+    </div><p>Your journey matters. Learn how we support you from your first session onward with compassion and clarity.</p>
+<div class="section-divider-with-icon"></div>
 </header>
 
 <section class="services-info">
@@ -240,15 +229,29 @@ Through guided enrichment groups, we address internal barriers that affect perfo
 
 <!-- ✅ Script at the very end -->
 <script>
-function toggleMenu() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Hamburger toggle
+window.toggleMenu = function () {
     const menu = document.getElementById("headerMenu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
+};
 
-function toggleSection(id) {
+  // Section toggle (accordion style: only one open at a time)
+window.toggleSection = function (id) {
     const section = document.getElementById(id);
-    section.style.display = section.style.display === "block" ? "none" : "block";
-}
+    const isVisible = section.style.display === 'block';
+
+    // Hide all
+    document.querySelectorAll('.toggle-content').forEach(el => {
+el.style.display = 'none';
+    });
+
+    // Show only if not already open
+    if (!isVisible) {
+section.style.display = 'block';
+    }
+};
+});
 </script>
 </body>
 </html>
